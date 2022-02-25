@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Listecategorie, Utilisateurs
+from home.models import Listecategorie, Listerole, Utilisateurs
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -85,4 +85,10 @@ class UtilisateursSerializer(serializers.ModelSerializer):
 class ListecategorieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Listecategorie
+        fields = "__all__"
+
+
+class ListeroleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Listerole
         fields = "__all__"

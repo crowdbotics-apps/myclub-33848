@@ -8,33 +8,49 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('home', '0001_load_initial_data'),
+        ("home", "0001_load_initial_data"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Listecategorie',
+            name="Listecategorie",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nom', models.CharField(max_length=10)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nom", models.CharField(max_length=10)),
             ],
         ),
         migrations.CreateModel(
-            name='Utilisateurs',
+            name="Utilisateurs",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('prenom', models.CharField(blank=True, max_length=16)),
-                ('nom', models.CharField(blank=True, max_length=16)),
-                ('prenomnom', models.CharField(blank=True, max_length=32)),
-                ('role', models.CharField(blank=True, max_length=50)),
-                ('license', models.IntegerField(blank=True, null=True)),
-                ('email', models.EmailField(blank=True, max_length=254, null=True)),
-                ('adresse', models.TextField(blank=True, null=True)),
-                ('datenaissance', models.DateField(blank=True, null=True)),
-                ('telephone', models.CharField(blank=True, max_length=256, null=True)),
-                ('idutilisateur', models.UUIDField(blank=True, null=True)),
-                ('nbanneeclub', models.PositiveIntegerField(blank=True, null=True)),
-                ('nbanneepratique', models.PositiveIntegerField(blank=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("prenom", models.CharField(blank=True, max_length=16)),
+                ("nom", models.CharField(blank=True, max_length=16)),
+                ("prenomnom", models.CharField(blank=True, max_length=32)),
+                ("role", models.CharField(blank=True, max_length=50)),
+                ("license", models.IntegerField(blank=True, null=True)),
+                ("email", models.EmailField(blank=True, max_length=254, null=True)),
+                ("adresse", models.TextField(blank=True, null=True)),
+                ("datenaissance", models.DateField(blank=True, null=True)),
+                ("telephone", models.CharField(blank=True, max_length=256, null=True)),
+                ("idutilisateur", models.UUIDField(blank=True, null=True)),
+                ("nbanneeclub", models.PositiveIntegerField(blank=True, null=True)),
+                ("nbanneepratique", models.PositiveIntegerField(blank=True, null=True)),
             ],
         ),
     ]
