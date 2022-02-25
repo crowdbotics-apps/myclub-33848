@@ -24,9 +24,9 @@ class User(AbstractUser):
         max_length=255,
     )
     prenom = models.CharField(
-        max_length=16,
         null=True,
         blank=True,
+        max_length=16,
     )
 
     def get_absolute_url(self):
