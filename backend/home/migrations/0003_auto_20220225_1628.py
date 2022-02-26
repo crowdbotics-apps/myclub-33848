@@ -6,20 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0002_listecategorie_utilisateurs'),
+        ("home", "0002_listecategorie_utilisateurs"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Listerole',
+            name="Listerole",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nom', models.CharField(max_length=16)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nom", models.CharField(max_length=16)),
             ],
         ),
         migrations.AddField(
-            model_name='utilisateurs',
-            name='photo',
+            model_name="utilisateurs",
+            name="photo",
             field=models.URLField(blank=True, null=True),
         ),
     ]

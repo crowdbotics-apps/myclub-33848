@@ -1,9 +1,9 @@
 from rest_framework import viewsets
-from home.models import Listecategorie, Listerole, Utilisateurs
+from home.models import Articles, Listecategorie, Listerole
 from .serializers import (
+    ArticlesSerializer,
     ListecategorieSerializer,
     ListeroleSerializer,
-    UtilisateursSerializer,
 )
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -38,15 +38,6 @@ class LoginViewSet(ViewSet):
         return Response({"token": token.key, "user": user_serializer.data})
 
 
-class UtilisateursViewSet(viewsets.ModelViewSet):
-    serializer_class = UtilisateursSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Utilisateurs.objects.all()
-
-
 class ListecategorieViewSet(viewsets.ModelViewSet):
     serializer_class = ListecategorieSerializer
     authentication_classes = (
@@ -63,3 +54,12 @@ class ListeroleViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Listerole.objects.all()
+
+
+class ArticlesViewSet(viewsets.ModelViewSet):
+    serializer_class = ArticlesSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Articles.objects.all()

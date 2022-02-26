@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Listecategorie, Listerole, Utilisateurs
+from home.models import Articles, Listecategorie, Listerole
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -76,12 +76,6 @@ class PasswordSerializer(PasswordResetSerializer):
     password_reset_form_class = ResetPasswordForm
 
 
-class UtilisateursSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Utilisateurs
-        fields = "__all__"
-
-
 class ListecategorieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Listecategorie
@@ -91,4 +85,10 @@ class ListecategorieSerializer(serializers.ModelSerializer):
 class ListeroleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Listerole
+        fields = "__all__"
+
+
+class ArticlesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Articles
         fields = "__all__"
