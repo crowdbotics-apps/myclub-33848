@@ -20,9 +20,9 @@ class Listerole(models.Model):
         max_length=16,
     )
     type = models.CharField(
-        max_length=16,
         null=True,
         blank=True,
+        max_length=16,
     )
     categorie = models.ManyToManyField(
         "home.Listecategorie",
@@ -63,4 +63,24 @@ class Evenements(models.Model):
     idevenement = models.UUIDField(
         null=True,
         blank=True,
+    )
+
+
+class Rencontres(models.Model):
+    "Generated Model"
+    titre = models.CharField(
+        max_length=256,
+    )
+    equipeclub = models.CharField(
+        max_length=256,
+    )
+    nbbutmarqueequipeclub = models.PositiveSmallIntegerField()
+    equipeadverse = models.CharField(
+        max_length=256,
+    )
+    nbbutmarqueequipeadverse = models.PositiveSmallIntegerField()
+    adomicile = models.BinaryField()
+    evenement = models.ManyToManyField(
+        "home.Evenements",
+        related_name="rencontres_evenement",
     )

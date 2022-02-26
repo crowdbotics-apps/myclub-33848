@@ -5,6 +5,7 @@ from .viewsets import (
     EvenementsViewSet,
     ListecategorieViewSet,
     ListeroleViewSet,
+    RencontresViewSet,
 )
 
 from home.api.v1.viewsets import (
@@ -19,6 +20,7 @@ router.register("listecategorie", ListecategorieViewSet)
 router.register("listerole", ListeroleViewSet)
 router.register("articles", ArticlesViewSet)
 router.register("evenements", EvenementsViewSet)
+router.register("rencontres", RencontresViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

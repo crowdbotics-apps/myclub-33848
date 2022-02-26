@@ -1,10 +1,11 @@
 from rest_framework import viewsets
-from home.models import Articles, Evenements, Listecategorie, Listerole
+from home.models import Articles, Evenements, Listecategorie, Listerole, Rencontres
 from .serializers import (
     ArticlesSerializer,
     EvenementsSerializer,
     ListecategorieSerializer,
     ListeroleSerializer,
+    RencontresSerializer,
 )
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -73,3 +74,12 @@ class EvenementsViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Evenements.objects.all()
+
+
+class RencontresViewSet(viewsets.ModelViewSet):
+    serializer_class = RencontresSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Rencontres.objects.all()

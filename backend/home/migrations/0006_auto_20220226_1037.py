@@ -6,22 +6,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0005_auto_20220226_1025'),
+        ("home", "0005_auto_20220226_1025"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='listecategorie',
-            name='users',
+            model_name="listecategorie",
+            name="users",
         ),
         migrations.AddField(
-            model_name='listerole',
-            name='categorie',
-            field=models.ManyToManyField(blank=True, related_name='listerole_categorie', to='home.Listecategorie'),
+            model_name="listerole",
+            name="categorie",
+            field=models.ManyToManyField(
+                blank=True, related_name="listerole_categorie", to="home.Listecategorie"
+            ),
         ),
         migrations.AddField(
-            model_name='listerole',
-            name='type',
+            model_name="listerole",
+            name="type",
             field=models.CharField(blank=True, max_length=16, null=True),
         ),
     ]
