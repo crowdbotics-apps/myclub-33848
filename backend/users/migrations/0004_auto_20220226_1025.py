@@ -6,33 +6,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0005_auto_20220226_1025'),
-        ('users', '0003_auto_20220226_0851'),
+        ("home", "0005_auto_20220226_1025"),
+        ("users", "0003_auto_20220226_0851"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='datemodification',
+            model_name="user",
+            name="datemodification",
             field=models.DateField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='evenements',
-            field=models.ManyToManyField(blank=True, related_name='user_evenements', to='home.Evenements'),
+            model_name="user",
+            name="evenements",
+            field=models.ManyToManyField(
+                blank=True, related_name="user_evenements", to="home.Evenements"
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='tuteurde',
+            model_name="user",
+            name="tuteurde",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.RemoveField(
-            model_name='user',
-            name='role',
+            model_name="user",
+            name="role",
         ),
         migrations.AddField(
-            model_name='user',
-            name='role',
-            field=models.ManyToManyField(blank=True, related_name='user_role', to='home.Listerole'),
+            model_name="user",
+            name="role",
+            field=models.ManyToManyField(
+                blank=True, related_name="user_role", to="home.Listerole"
+            ),
         ),
     ]

@@ -12,17 +12,22 @@ class Listecategorie(models.Model):
         blank=True,
         related_name="listecategorie_articles",
     )
-    users = models.ManyToManyField(
-        "users.User",
-        blank=True,
-        related_name="listecategorie_users",
-    )
 
 
 class Listerole(models.Model):
     "Generated Model"
     nom = models.CharField(
         max_length=16,
+    )
+    type = models.CharField(
+        max_length=16,
+        null=True,
+        blank=True,
+    )
+    categorie = models.ManyToManyField(
+        "home.Listecategorie",
+        blank=True,
+        related_name="listerole_categorie",
     )
 
 
@@ -51,9 +56,9 @@ class Evenements(models.Model):
     )
     description = models.TextField()
     categorie = models.CharField(
-        max_length=256,
         null=True,
         blank=True,
+        max_length=256,
     )
     idevenement = models.UUIDField(
         null=True,

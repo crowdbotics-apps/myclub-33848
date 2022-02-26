@@ -8,35 +8,49 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('home', '0004_auto_20220226_0851'),
+        ("home", "0004_auto_20220226_0851"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Evenements',
+            name="Evenements",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('titre', models.CharField(max_length=256)),
-                ('datedebut', models.DateTimeField()),
-                ('datefin', models.DateTimeField()),
-                ('lieu', models.CharField(max_length=256)),
-                ('description', models.TextField()),
-                ('categorie', models.CharField(blank=True, max_length=256, null=True)),
-                ('idevenement', models.UUIDField(blank=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("titre", models.CharField(max_length=256)),
+                ("datedebut", models.DateTimeField()),
+                ("datefin", models.DateTimeField()),
+                ("lieu", models.CharField(max_length=256)),
+                ("description", models.TextField()),
+                ("categorie", models.CharField(blank=True, max_length=256, null=True)),
+                ("idevenement", models.UUIDField(blank=True, null=True)),
             ],
         ),
         migrations.RemoveField(
-            model_name='articles',
-            name='categories',
+            model_name="articles",
+            name="categories",
         ),
         migrations.AddField(
-            model_name='listecategorie',
-            name='articles',
-            field=models.ManyToManyField(blank=True, related_name='listecategorie_articles', to='home.Articles'),
+            model_name="listecategorie",
+            name="articles",
+            field=models.ManyToManyField(
+                blank=True, related_name="listecategorie_articles", to="home.Articles"
+            ),
         ),
         migrations.AddField(
-            model_name='listecategorie',
-            name='users',
-            field=models.ManyToManyField(blank=True, related_name='listecategorie_users', to=settings.AUTH_USER_MODEL),
+            model_name="listecategorie",
+            name="users",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="listecategorie_users",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]
