@@ -7,6 +7,16 @@ class Listecategorie(models.Model):
     nom = models.CharField(
         max_length=10,
     )
+    articles = models.ManyToManyField(
+        "home.Articles",
+        blank=True,
+        related_name="listecategorie_articles",
+    )
+    users = models.ManyToManyField(
+        "users.User",
+        blank=True,
+        related_name="listecategorie_users",
+    )
 
 
 class Listerole(models.Model):
@@ -27,8 +37,25 @@ class Articles(models.Model):
     modifiepar = models.CharField(
         max_length=256,
     )
-    categories = models.ManyToManyField(
-        "home.Articles",
+
+
+class Evenements(models.Model):
+    "Generated Model"
+    titre = models.CharField(
+        max_length=256,
+    )
+    datedebut = models.DateTimeField()
+    datefin = models.DateTimeField()
+    lieu = models.CharField(
+        max_length=256,
+    )
+    description = models.TextField()
+    categorie = models.CharField(
+        max_length=256,
+        null=True,
         blank=True,
-        related_name="articles_categories",
+    )
+    idevenement = models.UUIDField(
+        null=True,
+        blank=True,
     )

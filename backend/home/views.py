@@ -1,4 +1,4 @@
-from .models import Listecategorie, Listerole
+from .models import Listecategorie, Listerole, Articles
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 

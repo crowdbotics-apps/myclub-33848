@@ -6,58 +6,58 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0002_auto_20220225_1606'),
+        ("users", "0002_auto_20220225_1606"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='adresse',
+            model_name="user",
+            name="adresse",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='datenaissance',
+            model_name="user",
+            name="datenaissance",
             field=models.DateField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='licence',
+            model_name="user",
+            name="licence",
             field=models.PositiveIntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='nbanneeclub',
+            model_name="user",
+            name="nbanneeclub",
             field=models.SmallIntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='nbanneepratique',
+            model_name="user",
+            name="nbanneepratique",
             field=models.SmallIntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='photo',
+            model_name="user",
+            name="photo",
             field=models.URLField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='prenomnom',
+            model_name="user",
+            name="prenomnom",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='role',
+            model_name="user",
+            name="role",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='telephone',
+            model_name="user",
+            name="telephone",
             field=models.PositiveIntegerField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='email',
+            model_name="user",
+            name="email",
             field=models.EmailField(blank=True, max_length=254, null=True),
         ),
     ]

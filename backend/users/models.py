@@ -29,30 +29,25 @@ class User(AbstractUser):
         max_length=16,
     )
     prenomnom = models.CharField(
-        max_length=256,
         null=True,
         blank=True,
+        max_length=256,
     )
     adresse = models.CharField(
-        max_length=256,
         null=True,
         blank=True,
+        max_length=256,
     )
     email = models.EmailField(
-        max_length=254,
         null=True,
         blank=True,
+        max_length=254,
     )
     telephone = models.PositiveIntegerField(
         null=True,
         blank=True,
     )
     licence = models.PositiveIntegerField(
-        null=True,
-        blank=True,
-    )
-    role = models.CharField(
-        max_length=256,
         null=True,
         blank=True,
     )
@@ -71,6 +66,24 @@ class User(AbstractUser):
     photo = models.URLField(
         null=True,
         blank=True,
+    )
+    datemodification = models.DateField(
+        null=True,
+        blank=True,
+    )
+    tuteurde = models.TextField(
+        null=True,
+        blank=True,
+    )
+    evenements = models.ManyToManyField(
+        "home.Evenements",
+        blank=True,
+        related_name="user_evenements",
+    )
+    role = models.ManyToManyField(
+        "home.Listerole",
+        blank=True,
+        related_name="user_role",
     )
 
     def get_absolute_url(self):

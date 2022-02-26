@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Articles, Listecategorie, Listerole
+from home.models import Articles, Evenements, Listecategorie, Listerole
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -91,4 +91,10 @@ class ListeroleSerializer(serializers.ModelSerializer):
 class ArticlesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Articles
+        fields = "__all__"
+
+
+class EvenementsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Evenements
         fields = "__all__"
