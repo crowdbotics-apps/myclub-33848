@@ -89,3 +89,19 @@ class Rencontres(models.Model):
         blank=True,
         related_name="rencontres_buteureqclub",
     )
+
+
+class Tests(models.Model):
+    "Generated Model"
+    titre = models.CharField(
+        max_length=256,
+    )
+    date = models.DateField()
+    joueur = models.ManyToManyField(
+        "users.User",
+        related_name="tests_joueur",
+    )
+    evenement = models.ManyToManyField(
+        "home.Evenements",
+        related_name="tests_evenement",
+    )

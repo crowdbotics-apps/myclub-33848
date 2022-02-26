@@ -8,13 +8,17 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('home', '0007_rencontres'),
+        ("home", "0007_rencontres"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='rencontres',
-            name='buteureqclub',
-            field=models.ManyToManyField(blank=True, related_name='rencontres_buteureqclub', to=settings.AUTH_USER_MODEL),
+            model_name="rencontres",
+            name="buteureqclub",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="rencontres_buteureqclub",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

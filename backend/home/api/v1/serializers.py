@@ -1,5 +1,12 @@
 from django.contrib.auth import get_user_model
-from home.models import Articles, Evenements, Listecategorie, Listerole, Rencontres
+from home.models import (
+    Articles,
+    Evenements,
+    Listecategorie,
+    Listerole,
+    Rencontres,
+    Tests,
+)
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -103,4 +110,10 @@ class EvenementsSerializer(serializers.ModelSerializer):
 class RencontresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rencontres
+        fields = "__all__"
+
+
+class TestsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tests
         fields = "__all__"

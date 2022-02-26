@@ -1,4 +1,4 @@
-from .models import Listecategorie, Listerole, Articles
+from .models import Evenements, Listecategorie, Listerole, Articles, Rencontres
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 
