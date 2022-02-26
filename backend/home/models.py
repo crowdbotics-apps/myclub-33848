@@ -84,3 +84,8 @@ class Rencontres(models.Model):
         "home.Evenements",
         related_name="rencontres_evenement",
     )
+    buteureqclub = models.ManyToManyField(
+        "users.User",
+        blank=True,
+        related_name="rencontres_buteureqclub",
+    )
